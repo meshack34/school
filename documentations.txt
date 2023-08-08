@@ -1,0 +1,16 @@
+mysql command line: for creating database
+1. mysql> Create database meshack3$default;
+2. mysql> Create user 'meshack3'@'meshack3.mysql.pythonanywhere-services.com' identified by 'Mysql@12345';   check on spaces
+3. mysql> USE meshack3$default;   #select database
+4. mysql> GRANT ALL PRIVILEGES ON meshack3$default.* TO 'meshack3'@'meshack3.mysql.pythonanywhere-services.com';
+5. mysql> ALTER USER meshack @localhost IDENTIFIED WITH mysql_native_password BY 'Mysql@12345';
+6.
+note : customizing the PATH for MySQL in environment variable : Edit System Variable
+(for example, C:\Program Files\MySQL\MySQL Server 5.7\bin)
+
+
+install on virtual : 
+1. pip install mysqlclient     # To install another library to use the MySQL database
+pip install pymysql
+2. python manage.py makemigrations
+3. python manage.py migrate

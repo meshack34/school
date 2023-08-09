@@ -14,3 +14,19 @@ install on virtual :
 pip install pymysql
 2. python manage.py makemigrations
 3. python manage.py migrate
+
+migrate data from mysqlite to mysql :
+ At the console of python anywhere
+1.install mysqlclient
+$ pip install mysqlclient 
+$ python manage.py dbshell    - take us to current db type i.e mysql and sqlite
+2. export to json file
+$python manage.py dumpdata > mydb.json
+3. create mysql database and password
+4. Go to setting file and update the database details
+5. load data to mysql 
+$ python manage.py load data mydb.json
+$ python manage.py migrate     - create nysql db and migrations
+$ python manage.py dbshell -  check changes
+.tables - show tables
+exit    - exit shell

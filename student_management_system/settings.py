@@ -91,13 +91,9 @@ DATABASES = {
 }
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'student_management_system',
-#         'USER': 'meshack',
-#         'PASSWORD': '1234567890',
-#         'HOST': 'localhost',
-#         'PORT': '',
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db45.sqlite3",
 #     }
 # }
 

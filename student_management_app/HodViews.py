@@ -169,10 +169,9 @@ def edit_staff_save(request ):
             newaddres.address= adress
             newaddres.save()
             messages.success(request,"Successfully edited staff")
-            return HttpResponseRedirect("/edit_staff/" + staff_id)
+            return HttpResponseRedirect(reverse("edit_staff", kwargs={"staff_id":staff_id}))
         except:
             messages.success(request,"Successfully edited staff")
-            return HttpResponseRedirect("/edit_staff/" + staff_id)
 
 def edit_student(request,student_id):
     request.session['student_id']=student_id
@@ -275,10 +274,10 @@ def edit_subject_save(request):
             subject.course_id=course
             subject.save()
             messages.success(request,"Successfully Edited subject")
-            return HttpResponseRedirect("/edit_subject/" + suject_id)
+            return HttpResponseRedirect( reverse("edit_subject", kwargs={"subject_id":suject_id}))
         except:
             messages.error(request,"Failed to Edit subject")
-            return HttpResponseRedirect("/edit_subject/" + suject_id)
+            return HttpResponseRedirect(reverse ("edit_subject", kwargs={"suject_id": suject_id}))
 
 
     pass
@@ -300,8 +299,8 @@ def edit_course_save(request):
             course.course_name=coursename
             course.save()
             messages.success(request,"Successfully Edited Course")
-            return HttpResponseRedirect("/edit_course/" + course_id)
+            return HttpResponseRedirect(reverse("edit_course", kwargs={"course_id":course_id}))
         except:
             messages.error(request,"Failed to Edit Course")
-            return HttpResponseRedirect("/edit_course/" + course_id)
+            return HttpResponseRedirect(reverse("edit_course", kwargs={"course_id":course_id}))
 

@@ -25,9 +25,9 @@ def doLogin(request):
             if user.user_type=="1":
                 return HttpResponseRedirect('/admin_home')
             elif user.user_type=="2":
-                return HttpResponse("User : "+request.user.email+" usertype : "+str(request.user.user_type))
+                return HttpResponseRedirect(reverse("staff_home"))
             else:
-                return HttpResponse("User : "+request.user.email+" usertype : "+str(request.user.user_type))
+                return HttpResponseRedirect(reverse("student_home"))
         else:
             messages.error(request,"Invalid Login Details")
             return HttpResponseRedirect("/")
